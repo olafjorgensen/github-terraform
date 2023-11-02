@@ -6,13 +6,13 @@ terraform {
     }
   }
 
-backend "azurerm" {
-  resource_group_name = "rg-back-tfstate"
-  storage_account_name = "sabntfsmuiivw73tx"
-  container_name = "tfstate"
-  key = "back.terraform.tfstate"
-  
-}
+  backend "azurerm" {
+    resource_group_name  = "rg-back-tfstate"
+    storage_account_name = "sabntfsmuiivw73tx"
+    container_name       = "tfstate"
+    key                  = "back.terraform.tfstate"
+
+  }
 
 }
 
@@ -71,15 +71,15 @@ resource "azurerm_key_vault" "kv_back" {
     object_id = data.azurerm_client_config.current.object_id
 
     key_permissions = [
-      "Get","List","Create",
+      "Get", "List", "Create",
     ]
 
     secret_permissions = [
-      "Get","Set","List",
+      "Get", "Set", "List",
     ]
 
     storage_permissions = [
-      "Get","Set","List",
+      "Get", "Set", "List",
     ]
   }
 }
